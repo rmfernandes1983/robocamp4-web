@@ -1,0 +1,8 @@
+{
+    "name": "Zelda",
+    "cat": "Super Nintendo",
+    "price": "49.99",
+    "desc": "Impossível não gostar desse jogo.",
+    "producers": ["Nintendo"],
+    "image": "zelda.jpg"
+}
