@@ -36,4 +36,4 @@ Open Chrome
     Open Browser        ${base_url}/login       chrome      options=add_experimental_option('excludeSwitches', ['enable-logging'])
 
 Open Chrome Headless
-    Open Browser        ${base_url}/login       headlesschrome      options=add_experimental_option('excludeSwitches', ['enable-logging'])
+    Open Browser        ${base_url}/login       headlesschrome      
