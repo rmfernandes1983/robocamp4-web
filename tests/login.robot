@@ -66,4 +66,4 @@ Realizar Login com sucesso
     Quando submeto minhas credenciais "${email}" e "${pass}"
     Entao devo ser autenticado
 
-    [Teardown]      After Test With Clear Local Storage
+    [Teardown]      After Teste With Clear Local Storage

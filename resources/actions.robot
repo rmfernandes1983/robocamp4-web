@@ -24,7 +24,7 @@ Get Product Json
 
 
 
-### Login
+## Login
 Dado que eu acesso a página de Login
     Go To       ${base_url}/login
 
@@ -71,7 +71,7 @@ Quando eu tento cadastrar o produto
 Então Devo ver este item no catálago
     Table Should Contain        class:table            ${product_json['name']}
 
-### Remover Produto
+#### Remover Produto
 Dado que eu tenho o produto "${file_name}" no catálago
     ${product_json}=    Get Product Json        ${file_name}
 

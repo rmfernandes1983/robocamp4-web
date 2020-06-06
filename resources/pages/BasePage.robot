@@ -9,7 +9,13 @@ ${ALERT_INFO}           class:alert-info
 
 *** Keywords ***
 Open Session
-    Open Chrome Headless
+
+    Run Keyword If      "${browser}" == "chrome"
+    ...     Open Chrome
+
+    Run Keyword If      "${browser}" == "headless"
+    ...     Open Chrome Headless
+
     Set Selenium Implicit Wait      5
     Set Window Size        1280        800
 
@@ -19,7 +25,7 @@ Close Session
 After Test
     Capture Page Screenshot
 
-After Test With Clear Local Storage
+After Teste With Clear Local Storage
     Capture Page Screenshot
     Execute Javascript          localStorage.clear();
 
