@@ -33,7 +33,8 @@ Quando eu submeto minhas credenciais "${email}" e "${pass}"
 
 Entao devo ser autenticado
     Wait Until Element Is Visible       ${LOGGED_USER}
-    Element Text Should Be              ${LOGGED_USER}        Papito   
+    Wait Until Element Contains         ${LOGGED_USER}        Papito   
+    #Element Text Should Be              ${LOGGED_USER}        Papito   
     #Wait Until Page Contains            Papito
 
 Entao devo ver uma mensagem de erro
