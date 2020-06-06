@@ -15,13 +15,18 @@ Suite Teardown  Close Session
 Test Teardown       After Test
 
 *** Test Cases ***
+# Login com sucesso
+#     [tags]      login
+#     Dado que eu acesso a página de Login
+#     Quando submeto minhas credenciais 'papito@ninjapixel.com' e 'pwd123'
+#     Entao devo ser autenticado
+
+#     [Teardown]      After Test With Clear Local Storage
 Login com sucesso
     [tags]      login
-    Dado que eu acesso a página de Login
-    Quando eu submeto minhas credenciais "papito@ninjapixel.com" e "pwd123"
-    Entao devo ser autenticado
+    [Template]      Realizar Login com sucesso
+    papito@ninjapixel.com   pwd123
 
-    [Teardown]      After Test With Clear Local Storage
 
 Senha incorreta
     [Template]      Tentativa de login com mensagem de erro
@@ -44,7 +49,7 @@ Tentativa de login com mensagem de erro
     [Arguments]     ${email}    ${pass}     ${saida}
 
     Dado que eu acesso a página de Login
-    Quando eu submeto minhas credenciais "${email}" e "${pass}"
+    Quando submeto minhas credenciais "${email}" e "${pass}"
     Entao devo ver uma mensagem de erro         ${saida}
 
 Tentativa de login com mensagem informativa
@@ -53,3 +58,12 @@ Tentativa de login com mensagem informativa
     Dado que eu acesso a página de Login
     Quando eu submeto minhas credenciais "${email}" e "${pass}"
     Entao devo ver uma mensagem informativa         ${saida}
+
+Realizar Login com sucesso    
+    [Arguments]     ${email}    ${pass}
+
+    Dado que eu acesso a página de Login
+    Quando submeto minhas credenciais "${email}" e "${pass}"
+    Entao devo ser autenticado
+
+    [Teardown]      After Test With Clear Local Storage

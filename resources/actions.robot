@@ -28,7 +28,7 @@ Get Product Json
 Dado que eu acesso a página de Login
     Go To       ${base_url}/login
 
-Quando eu submeto minhas credenciais "${email}" e "${pass}"
+Quando submeto minhas credenciais "${email}" e "${pass}"
     Login With      ${email}       ${pass}
 
 Entao devo ser autenticado
